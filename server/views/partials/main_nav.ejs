@@ -1,0 +1,31 @@
+<!-- Main Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand " style="text-decoration-color: Royal Blue" href="/" >:)</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <% if (title == "Home"){ %>
+        <li class="nav-item active">
+        <% } else  { %><i class="fa-solid fa-house"></i>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/homepage"><i class="fas fa-lg fa-laptop-house"></i> Home </a>
+        </li>
+
+
+          <% if(typeof username == 'string' && username) { %>
+            <li class="navbar-text usernameDisplay"><i class="fas fa-lg fa-user"></i> Welcome, <%= username %></li>
+            <li class="nav-item"><a href="/logout" class="nav-link">
+              <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+          <% } else { %>
+            <li class="nav-item"><a href="/login" class="nav-link">
+              <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+          <% } %>
+          
+    </div>
+  </nav>
+  

@@ -1,0 +1,60 @@
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h1><%= title %></h1>
+
+            <% if(typeof displayName == 'string' && displayName) { %>
+                <a href="/medical_profile/add" class="btn btn-primary" role="button">
+                    <i class="fas fa-plus-circle"></i> Add Medical 
+                    Profile</a>
+            <% } %>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <tr class="d-flex">
+                    <% if(typeof displayName == 'string' && displayName) { %>
+                        <th class="text-center col-2">Name</th>
+                        <th class="text-center col-2">DOB</th>
+                        <th class="text-center col-2">Record</th>
+                        <th class="text-center col-1"></th>
+                        <th class="text-center col-1"></th>
+                    <% } else{ %>
+                        <th class="text-center col-2">Name</th>
+                        <th class="text-center col-2">DOB</th>
+                        <th class="text-center col-2">Record</th>
+                    <% } %>
+                </tr>
+
+
+                <% for(let count = 0; count < CoffeeList.length; count++) { %>
+                    <tr class="d-flex">
+                        <% if(typeof displayName == 'string' && displayName) { %>
+                            <td class="text-center col-2"><%= CoffeeList[count].beanType %></td>
+                            <td class="text-center col-2"><%= CoffeeList[count].roastLevel %></td>
+                            <td class="text-center col-2"><%= CoffeeList[count].roastDate %></td>
+                            <td class="text-center col-1"><%= CoffeeList[count].pricePerKg %></td>
+                            <td class="text-center col-3"><%= CoffeeList[count].brewGuide %></td>
+
+                            <td class="text-center col-1">
+                                <a href="/coffee-list/edit/<%= CoffeeList[count]._id %>" class="btn btn-primary">
+                                <i class="fas fa-pencil-alt"></i> Edit</a>
+
+                            </td>
+                            <td class="text-center col-1">
+                                <a href="/coffee-list/delete/<%= CoffeeList[count]._id %>" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i> Delete</a>
+                            </td>
+                        <% } else {%>
+                            <td class="text-center col-2"><%= CoffeeList[count].beanType %></td>
+                            <td class="text-center col-2"><%= CoffeeList[count].roastLevel %></td>
+                            <td class="text-center col-2"><%= CoffeeList[count].roastDate %></td>
+                            <td class="text-center col-1"><%= CoffeeList[count].pricePerKg %></td>
+                            <td class="text-center col-5"><%= CoffeeList[count].brewGuide %></td>
+                            <% } %>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+
+
