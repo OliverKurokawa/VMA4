@@ -16,6 +16,14 @@
           <a class="nav-link" href="/homepage"><i class="fas fa-lg fa-laptop-house"></i> Home </a>
         </li>
 
+        <% if (title == "VMA"){ %>
+          <li class="nav-item active">
+          <% } else  { %><i class="fa-solid fa-house"></i>
+          <li class="nav-item">
+          <% } %>
+            <a class="nav-link" href="/vma"><i class="fas fa-lg fa-laptop-house"></i> VMA </a>
+          </li>
+
 
           <% if(typeof username == 'string' && username) { %>
             <li class="navbar-text usernameDisplay"><i class="fas fa-lg fa-user"></i> Welcome, <%= username %></li>
@@ -25,6 +33,7 @@
             <li class="nav-item"><a href="/login" class="nav-link">
               <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
           <% } %>
+          
           
     </div>
   </nav>

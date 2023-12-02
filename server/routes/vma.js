@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-let Medical_profile = require('../models/medical_profile')
+let vmaController = require('../controllers/vma')
 
 let passport = require('passport');
 
@@ -14,8 +14,12 @@ function requireAuth(req, res, next)
     }
     next();
 }
-router.get('/',Medical_profileController.displayMedical_profile);
 
-let Medical_profileController = require('../controllers/medical_profile');
-const { route } = require('./users');
-module.exports = router;
+
+
+router.get('/', vmaController.displaymedical_profilePage);
+router.get('/add',requireAuth,vmaController.displayvmaAddPage);
+router.post('/add',requireAuth,vmaController.processvmaAddPage);
+
+
+module.exports = router

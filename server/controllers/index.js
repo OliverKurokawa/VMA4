@@ -79,7 +79,6 @@ module.exports.processLoginPage = (req, res, next) => {
             {
                 id: user._id,
                 username: user.username,
-                email: user.email
             }
 
 
@@ -107,8 +106,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
 module.exports.processRegisterPage = (req, res, next) => {
     let newUser = new User({
         username: req.body.username,
-        email: req.body.email,
-        username: req.body.username
+        role: req.body.role
     });
 
     User.register(newUser, req.body.password, (err) => {

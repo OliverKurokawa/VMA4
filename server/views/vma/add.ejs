@@ -1,0 +1,55 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+  
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6"></div>
+        <h1><%= title %></h1>
+
+        <form class="form" method="POST">
+            <div class="class-group">
+                <label for="nameTextField">Name</label>
+                <input type="text" class="form-control"
+                id="nameTextField"
+                placeholder="Enter Your name"
+                name="name"
+                 required>
+            </div>
+
+            <div class="class-group">
+                <label for="dibTextField">DOB</label>
+                <input type="text" class="form-control"
+                id="dobTextField"
+                placeholder="Enter birthday"
+                name="dob"
+                required>
+            </div>
+
+            <div class="class-group">
+                <label for="recordTextField">Record</label>
+                <input type="text" class="form-control"
+                id="recordTextField"
+                placeholder="Enter Medical record"
+                name="record"
+                 required>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-edit">Submit</i>
+            </button>
+
+            <a href="/vma" class="btn btn-warning">
+                <i class="fas fa-undo"></i> Cancel</a>
+        </form>
+    </div>
+</div>
+  
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
+  
+
+
+
+

@@ -25,8 +25,7 @@ mongoDB.once('open', ()=>{
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let coffeeRouter = require('../routes/coffee');
-let medical_profileRouter = require('../routes/medical_profile');
-
+let vmaRouter = require('../routes/vma');
 let app = express();
 
 // view engine setup
@@ -63,7 +62,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/coffee-list',coffeeRouter);
-app.use('/medical_profile',medical_profileRouter);
+app.use('/vma',vmaRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
