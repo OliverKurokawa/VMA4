@@ -21,5 +21,9 @@ router.get('/', vmaController.displaymedical_profilePage);
 router.get('/add',requireAuth,vmaController.displayvmaAddPage);
 router.post('/add',requireAuth,vmaController.processvmaAddPage);
 
+// route to show the appointment page
+router.get('/makeAppointment', vmaController.displayAppointmentPage);
+router.post('/addappointment', vmaController.processAppointment);
+router.get('/appointmentSuccess', vmaController.displayAppointmentSuccessPage);
 
-module.exports = router
+module.exports = router;

@@ -95,3 +95,22 @@ module.exports.performDelete = (req,res,next) =>{
     });
 
 }
+
+//------------------------------------------------------------------------------
+module.exports.displayAppointmentPage = (req,res,next) =>{
+    res.render('vma/appointment', {
+        title: 'Appointment',
+        username: req.user ? req.user.username : ''
+    });
+}
+
+module.exports.processAppointment = (req, res, next) => {
+    res.redirect('/appointmentSuccess');
+}
+
+module.exports.displayAppointmentSuccessPage = (req, res, next) => {
+    res.render('vma/appointmentSuccess', {
+        title: 'Appointment Success',
+        username: req.user ? req.user.username : ''
+    });
+}

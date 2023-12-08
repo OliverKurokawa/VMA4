@@ -17,10 +17,10 @@ router.get('/about', indexController.displayAboutPage);
 router.get('/products',indexController.displayProductsPage);
 
 /* GET Services*/
-router.get('/services',indexController.displayProductsPage);
+router.get('/services',indexController.displayServicesPage);
 
 /* GET Contact Us */
-router.get('/contact', indexController.displayServicesPage);
+router.get('/contact', indexController.displayContactPage);
 
 router.get('/login', indexController.displayLoginpage);
 

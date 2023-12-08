@@ -30,6 +30,7 @@ module.exports.displayAddPage = (req,res,next) =>{
 }
 
 module.exports.processAddPage = (req,res,next) =>{
+    try{
     let newcoffee = Coffee({
         "beanType": req.body.beanType,
         "roastLevel": req.body.roastLevel,
@@ -37,6 +38,7 @@ module.exports.processAddPage = (req,res,next) =>{
         "pricePerKg": req.body.pricePerKg,
         "brewGuide": req.body.brewGuide
     })
+
     Coffee.create(newcoffee,(err,Coffee) =>{
         if(err){
             console.log(err);
@@ -45,6 +47,11 @@ module.exports.processAddPage = (req,res,next) =>{
             res.redirect('/coffee-list');
         }
     });
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
 }
 
 module.exports.displayEditPage = (req,res,next) =>{
@@ -101,3 +108,4 @@ module.exports.performDelete = (req,res,next) =>{
     });
 
 }
+

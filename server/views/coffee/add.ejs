@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Coffee</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      width: 350px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <form action="/add" method="POST">
+    <h1>Add Coffee</h1>
+    <input type="text" name="beanType" placeholder="Bean Type" required><br>
+    <input type="text" name="roastLevel" placeholder="Roast Level" required><br>
+    <input type="text" name="roastDate" placeholder="Roast Date" required><br>
+    <input type="text" name="pricePerKg" placeholder="Price Per Kg" required><br>
+    <input type="text" name="brewGuide" placeholder="Brew Guide" required><br>
+    <button type="submit">Add Coffee</button>
+  </form>
+</body>
+</html>
